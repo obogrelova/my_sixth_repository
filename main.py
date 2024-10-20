@@ -39,7 +39,22 @@ class TaskManager:
 
 task_manager = TaskManager()
 
-task_manager.add_task("Купить продукты", datetime(2024, 10, 20))
+
+def _init_(self, description, deadline):
+    self.description = description
+    self.deadline = deadline
+    self.completed = False
+
+
+def mark_as_completed(self):
+    self.completed = True
+
+
+def _str_(self):
+    status = "Выполнено" if self.completed else "Не выполнено"
+    return f"Задача: {self.description}, Срок: {self.deadline}, Статус: {status}"
+
+task_manager.add_task("Купить продукты", datetime(2024, 10, 19))
 task_manager.add_task("Написать отчет", datetime(2024, 10, 22))
 
 task_manager.mark_task_as_completed(0)
