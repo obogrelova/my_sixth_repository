@@ -25,7 +25,7 @@ class TaskManager:
         self.tasks.append(task)
 
     def mark_task_as_completed(self, task_index):
-        if o <= task_index < len(self.tasks):
+        if 0 <= task_index < len(self.tasks):
             self.tasks[task_index].mark_as_completed()
 
     def get_current_tasks(self):
