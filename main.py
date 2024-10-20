@@ -34,3 +34,19 @@ class TaskManager:
     def show_tasks(self):
         for i, task in enumerate(self.tasks):
             print(f"{i + 1}. {task}")
+
+
+
+task_manager = TaskManager()
+
+task_manager.add_task("Купить продукты", datetime(2024, 10, 20))
+task_manager.add_task("Написать отчет", datetime(2024, 10, 22))
+
+task_manager.mark_task_as_completed(0)
+
+print("Все задачи:")
+task_manager.show_tasks()
+
+print("\nТекущие задачи:")
+for task in task_manager.get_current_tasks():
+    print(task)
