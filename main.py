@@ -22,6 +22,8 @@ class TaskManager:
 
     def add_task(self, description, deadline):
         task = Task(description, deadline)
+        self.description = description
+        self.deadline = deadline
         self.tasks.append(task)
 
     def mark_task_as_completed(self, task_index):
