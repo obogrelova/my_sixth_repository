@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 class Task:
-    def _init_(self, description, deadline):
+    def __init__(self, description, deadline):
         self.description = description
         self.deadline = deadline
         self.completed = False
@@ -10,20 +10,18 @@ class Task:
     def mark_as_completed(self):
         self.completed = True
 
-    def _str_(self):
+    def __str__(self):
         status = "Выполнено" if self.completed else "Не выполнено"
         return f"Задача: {self.description}, Срок: {self.deadline}, Статус: {status}"
 
 
 
 class TaskManager:
-    def _init_(self):
+    def __init__(self):
         self.tasks = []
 
     def add_task(self, description, deadline):
         task = Task(description, deadline)
-        self.description = description
-        self.deadline = deadline
         self.tasks.append(task)
 
     def mark_task_as_completed(self, task_index):
